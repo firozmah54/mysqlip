@@ -1,4 +1,32 @@
+<?php 
+/**
+ * DELETE table data
+ */
+$connection = new mysqli('localhost','root','','books');
+$sql="DELETE FROM users WHERE id='10'";
+$connection->query($sql);
 
+
+/**
+ * DELETE table data alternative method prepared() statement
+ */
+
+$connection = new mysqli('localhost', 'root', '', 'books');
+$sql ="DELETE FROM users WHERE id='9'";
+
+$statement=$connection->prepare($sql);
+$statement->execute();
+
+/**
+ * Data update for table 
+ */
+
+$connection = new mysqli('localhost', 'root', '', 'books');
+$sql="UPDATE users SET email= 'firoz@gmail.com' WHERE id='9'";
+
+$connection->query($sql);
+
+?>
 
 
 <!doctype html>
