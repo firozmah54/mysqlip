@@ -1,3 +1,42 @@
+
+            <?php 
+                                       // $sql = "SELECT * FROM users ORDER BY name ASC";
+                                       /**
+                                        * শুধু মাত্র 5 দেখাবে  
+                                        */
+                                       // $sql = "SELECT * FROM users LIMIT 5";
+
+                                       /**
+                                        * শুধু মাত্র gander=female/male দেখাবে  
+                                        */
+                                     //   $sql = "SELECT * FROM users WHERE gander='female'";
+
+                                     /**
+                                        * শুধু মাত্র location দেখাবে  
+                                        */
+                                      //  $sql = "SELECT * FROM users WHERE location='pabna'";
+
+                                     /**
+                                        * শুধু মাত্র WHERE NO মানে এটা ছাড়া অন্যান  দেখাবে অন্যান্য সংখ্যা দেখাবে  
+                                        */
+                                     //  $sql = "SELECT * FROM users WHERE NOT location='pabna'";
+                                      
+
+                                     /**
+                                        * WHERE OR মানে এটা  যেকোন  মিলতে হবে  
+                                        */
+                                     //$sql = "SELECT * FROM users WHERE location='pabna' OR gander='male'";
+
+                                     /**
+                                        * WHERE AND মানে নিদিষ্ট করে বলা   
+                                        */
+                                    $sql = "SELECT * FROM users WHERE location='pabna' AND gander='male'";
+
+                                        $result = $connection->query($sql);
+                                        $i=1;
+                                        while($rows = $result->fetch_object()):
+                                        
+                                        ?>
 <?php 
 /**
  * DELETE table data
